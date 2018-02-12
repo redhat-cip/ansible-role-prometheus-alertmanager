@@ -15,8 +15,14 @@
 # under the License.
 
 ---
-- name: alertmanager-reload
+- name: prometheus_alertmanager-reload
   become: True
   service:
-    name: alertmanager
+    name: '{{ prometheus_alertmanager_service_name }}'
     state: reloaded
+
+- name: prometheus_alertmanager-restart
+  become: True
+  service:
+    name: '{{ prometheus_alertmanager_service_name }}'
+    state: restarted
