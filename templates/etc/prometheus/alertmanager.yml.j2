@@ -1,0 +1,26 @@
+{% if prometheus_alertmanager_globals is defined %}
+global:
+{% for key, value in prometheus_alertmanager_globals.items() %}
+  {{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
+
+templates:
+- '/etc/alertmanager/template/*.tmpl'
+
+{% if prometheus_alertmanager_routes is defined %}
+route:
+  {{ prometheus_alertmanager_routes | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
+
+inhibit_rules:
+- source_match:
+    severity: 'critical'
+  target_match:
+    severity: 'warning'
+  equal: ['alertname', 'cluster', 'service']
+
+{% if prometheus_alertmanager_receivers is defined %}
+receivers:
+{{ prometheus_alertmanager_receivers | to_nice_yaml(indent=2) }}
+{% endif %}
