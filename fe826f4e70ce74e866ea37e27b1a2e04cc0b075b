@@ -1,0 +1,8 @@
+Code-Review+2: François Charlier <francois.charlier@redhat.com>
+Workflow+1: François Charlier <francois.charlier@redhat.com>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Thu, 11 Jun 2020 13:55:55 +0000
+Reviewed-on: https://softwarefactory-project.io/r/18583
+Project: ansible/ansible-role-prometheus-alertmanager
+Branch: refs/heads/master
