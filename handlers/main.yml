@@ -16,13 +16,13 @@
 
 ---
 - name: prometheus_alertmanager-reload
-  become: True
+  become: true
   service:
     name: '{{ prometheus_alertmanager_service_name }}'
     state: reloaded
 
 - name: prometheus_alertmanager-restart
-  become: True
+  become: true
   service:
     name: '{{ prometheus_alertmanager_service_name }}'
     state: restarted
