@@ -14,7 +14,7 @@
 dependencies: []
 
 galaxy_info:
-  name: prometheus_alertmanager
+  role_name: prometheus_alertmanager
   namespace: redhat_cip
   author: redhat-cip
   description: An Ansible role for the Prometheus AlertManager server
